@@ -1,0 +1,40 @@
+with open(sys.argv[1], 'r') as f:
+    ifile = f.read()
+    if len(sys.argv) == 1:
+        empty = "Please give me something to scan!"
+        print empty
+
+    else:
+        print ifile
+
+def main(filename):
+# do something with filename
+    print('your filename is %s' % filename)
+
+
+    if __name__ == '__main__':
+         parser = argparse.ArgumentParser(description='my program help')
+         parser.add_argument('filename', help='your desired filename')
+
+    args = parser.parse_args()
+    main(args.filename)
+
+
+
+
+
+
+parser = argparse.ArgumentParser(description='I need something to do...')
+parser.add_argument('-f', nargs='+', help='specify macro file path')
+args = parser.parse_args()
+main(args.filename)
+
+
+
+
+#print args.file.readlines()
+
+
+
+#cmd = base64.b64decode(cmd)
+#print cmd
